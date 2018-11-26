@@ -6,17 +6,20 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 14:31:20 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/23 16:13:34 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/26 20:09:52 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <string.h>
+# include <string.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
+int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
@@ -32,13 +35,11 @@ char	*ft_strncpy(char *dst, const char *src, size_t len);
 char	*ft_strrchar(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-
-//size_t	strlcat(char *dst, const char *src, size_t size);
-void 	*ft_memset(void *b, int c, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
-//void	*memcpy(void *dst, const void *src, size_t n);
-//void	*memmove(void *dst, const void *src, size_t len);
-//void	*memchr(const void *s, int c, size_t n);
-//int		memcmp(const void *s1, const void *s2, size_t n); */
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
 
 #endif

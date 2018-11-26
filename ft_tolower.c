@@ -6,13 +6,15 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 13:31:39 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/22 15:07:42 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/24 19:14:53 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_tolower(int c)
 {
-	if (c => 65 && c <= 90)
+	if (c >= 65 && c <= 90)
 		return (c + 32);
 	else
 		return (c);

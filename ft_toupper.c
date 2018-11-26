@@ -6,13 +6,15 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 13:45:19 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/22 13:49:18 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/24 19:14:40 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_toupper(int c)
 {
-	if (c => 97 && c <= 122)
+	if (c >= 97 && c <= 122)
 		return (c - 32);
 	else
 		return (c);

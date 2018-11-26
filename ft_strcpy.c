@@ -6,13 +6,16 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 21:06:06 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/23 16:13:53 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/26 17:27:55 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcpy(char *dst, const char *src)
+#include "libft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
 {
-	char *a;
+	char	*a;
+
 	a = dst;
 	while (*src)
 	{

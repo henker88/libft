@@ -6,9 +6,11 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 20:38:41 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/22 21:04:06 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/24 19:05:27 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
