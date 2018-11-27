@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 15:28:27 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/26 23:36:25 by sgendry          ###   ########.fr       */
+/*   Created: 2018/11/27 16:44:35 by sgendry           #+#    #+#             */
+/*   Updated: 2018/11/27 17:13:05 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned char	*a;
-	unsigned char	*b;
+	char	*s1;
+	char	*s2;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
-	a = (unsigned char *)dst;
-	b = (unsigned char *)src;
-	while (n--)
+	s1 = (char *)haystack;
+	s2 = (char *)needle;
+	if (*s2 == '\0')
+		return (s1);
+	k = 0;
+	while (s1[k] && k < len)
 	{
-		*a = *b;
-		if (*a == (unsigned char)c)
-			return ((void *)(a + 1));
-		a++;
-		b++;
+		i = k;
+		j = 0;
+		while (s1[i] == s2[j] && i < len)
+		{
+			i++;
+			j++;
+			if (s2[j] == '\0')
+				return ((char *)s1 + k);
+		}
+		k++;
 	}
 	return (0);
 }

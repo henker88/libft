@@ -6,7 +6,7 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 14:31:20 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/26 20:09:52 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/27 21:28:49 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,19 @@ size_t	ft_strlen(const char *s);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strncpy(char *dst, const char *src, size_t len);
-char	*ft_strrchar(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strstr(const char *haystack, const char *needle);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memalloc(size_t size);
 
 #endif

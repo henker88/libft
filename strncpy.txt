@@ -1,0 +1,18 @@
+#include "libft.h"
+
+char    *ft_strncpy(char *dst, const char *src, size_t len)
+{
+        char    *a;
+        char    *b;
+
+        a = dst;
+        b = (char *)src;
+        while (*b && len)
+        {
+                *a++ = *b++;
+                len--;
+        }
+        while (len--)
+                *a++ = '\0';
+        return (dst);
+}
