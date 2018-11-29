@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 21:52:33 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/29 16:06:51 by sgendry          ###   ########.fr       */
+/*   Created: 2018/11/29 20:06:23 by sgendry           #+#    #+#             */
+/*   Updated: 2018/11/29 22:18:03 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strtrim(char const *s)
 {
+	char	*str;
+	int		i;
 	int		len;
-	char	*mem;
-	char	*mem_begin;
 
-	if (!s || !f)
+	if (!s)
 		return (NULL);
-	len = ft_strlen(s);
-	mem = ft_strnew(len);
-	if (!mem)
-		return (NULL);
-	mem_begin = mem;
-	if (mem == 0)
-		return (NULL);
-	while (*s)
-	{
-		*mem = f(*s);
-		mem++;
-		s++;
-	}
-	return (mem_begin);
+	len = ft_strlen(s) - 1;
+	i = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
+		len--;
+	str = ft_strsub(s, i, len - i + 1);
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 18:56:54 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/28 21:37:34 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/29 15:08:55 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strnew(size_t size)
 {
 	char	*mem;
 
+	if (size == (size_t)(-1))
+		return (NULL);
 	mem = (char *)malloc(size + 1);
 	if (mem == 0)
 		return (NULL);

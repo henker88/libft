@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 21:52:33 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/29 16:06:51 by sgendry          ###   ########.fr       */
+/*   Created: 2018/11/29 15:09:45 by sgendry           #+#    #+#             */
+/*   Updated: 2018/11/29 15:32:28 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		len;
-	char	*mem;
-	char	*mem_begin;
+	int				len;
+	unsigned int	i;
+	char			*mem;
+	char			*mem_begin;
 
-	if (!s || !f)
+	i = 0;
+	if (!s)
 		return (NULL);
 	len = ft_strlen(s);
 	mem = ft_strnew(len);
-	if (!mem)
-		return (NULL);
 	mem_begin = mem;
 	if (mem == 0)
 		return (NULL);
-	while (*s)
+	while (s[i])
 	{
-		*mem = f(*s);
+		*mem = f(i, s[i]);
 		mem++;
-		s++;
+		i++;
 	}
 	return (mem_begin);
 }

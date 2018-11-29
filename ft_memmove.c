@@ -6,7 +6,7 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 16:01:55 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/27 21:05:31 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/29 22:06:28 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	unsigned char *a;
 	unsigned char *b;
 
+	if (dst == src)
+		return (dst);
 	a = (unsigned char *)dst;
 	b = (unsigned char *)src;
 	if (a > b)
