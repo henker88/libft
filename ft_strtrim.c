@@ -6,7 +6,7 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 20:06:23 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/29 22:18:03 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/11/30 16:00:56 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ char	*ft_strtrim(char const *s)
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
-	while (s[len] == ' ' || s[len] == '\n' || s[len] == '\t')
+	while ((s[len] == ' ' || s[len] == '\n' || s[len] == '\t') && len)
 		len--;
-	str = ft_strsub(s, i, len - i + 1);
+	if (len == 0)
+		str = ft_strnew(0);
+	else
+		str = ft_strsub(s, i, len - i + 1);
 	return (str);
 }
