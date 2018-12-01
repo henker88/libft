@@ -6,7 +6,7 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/27 18:54:45 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/27 20:51:14 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/12/01 15:12:04 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,12 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 		ddst++;
 		size--;
 	}
-	while (size-- > 1)
+	while (*src && size > 1)
 	{
-		*dst++ = *src++;
+		*dst = *src;
+		dst++;
+		src++;
+		size--;
 		if (size == 1 || !*src)
 			*dst = '\0';
 	}
