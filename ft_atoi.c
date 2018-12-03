@@ -6,21 +6,20 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 15:38:05 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/01 21:29:24 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/12/03 21:05:36 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *str)
 {
-	long long 		number;
-	int 		i;
-	int 		negative;
+	long long		number;
+	int				i;
+	int				negative;
 
 	number = 0;
 	i = 0;
 	negative = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
-			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-')
 	{
@@ -34,7 +33,7 @@ int		ft_atoi(const char *str)
 		number = number * 10 + str[i] - '0';
 		i++;
 		if (number < 0)
-			 return (negative == -1 ? 0 : -1);
+			return (negative == -1 ? 0 : -1);
 	}
 	return (negative * number);
 }

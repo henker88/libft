@@ -6,16 +6,16 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:21:39 by sgendry           #+#    #+#             */
-/*   Updated: 2018/11/30 20:17:44 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/12/03 20:37:59 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_my_word(char const *s, char c)
+static size_t	ft_my_word(char const *s, char c)
 {
-	size_t	i;
-	size_t	word;
+	size_t		i;
+	size_t		word;
 
 	i = 0;
 	word = 0;
@@ -28,10 +28,10 @@ size_t	ft_my_word(char const *s, char c)
 	return (word);
 }
 
-char	**ft_my(char **mem, const char *s, char c, size_t word)
+static char		**ft_my(char **mem, const char *s, char c, size_t word)
 {
-	size_t	i;
-	size_t	len;
+	size_t		i;
+	size_t		len;
 
 	i = 0;
 	while (i < word)
@@ -53,10 +53,10 @@ char	**ft_my(char **mem, const char *s, char c, size_t word)
 	return (mem);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	char	**mem;
-	size_t	word;
+	char		**mem;
+	size_t		word;
 
 	if (!s)
 		return (NULL);

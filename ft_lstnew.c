@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 16:44:35 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/03 15:52:58 by sgendry          ###   ########.fr       */
+/*   Created: 2018/12/03 14:43:16 by sgendry           #+#    #+#             */
+/*   Updated: 2018/12/03 16:17:45 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*s1;
-	char	*s2;
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	t_list	*mem;
 
-	s1 = (char *)haystack;
-	s2 = (char *)needle;
-	if (*s2 == '\0')
-		return (s1);
-	k = 0;
-	while (s1[k] && k < len)
+	mem = (t_list *)malloc(sizeof(t_list));
+	if (!mem)
+		return (NULL);
+	if (content == NULL)
 	{
-		i = k;
-		j = 0;
-		while (s1[i] == s2[j] && i < len)
-		{
-			i++;
-			j++;
-			if (s2[j] == '\0')
-				return ((char *)s1 + k);
-		}
-		k++;
+		mem->content = NULL;
+		mem->content_size = 0;
 	}
-	return (0);
+	else
+	{
+		mem->content = ft_memalloc(content_size);
+		if (mem->content == 0)
+		{
+			free(mem);
+			return (0);
+		}
+		ft_memcpy(mem->content, content, content_size);
+		mem->content_size = content_size;
+	}
+	mem->next = NULL;
+	return (mem);
 }

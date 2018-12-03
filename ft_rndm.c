@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_rndm.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/29 16:10:41 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/03 20:45:30 by sgendry          ###   ########.fr       */
+/*   Created: 2018/12/03 21:10:45 by sgendry           #+#    #+#             */
+/*   Updated: 2018/12/03 21:45:09 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+int		*ft_rndm(int c)
 {
-	if (!s1 || !s2)
-		return (-1);
-	if (n == 0)
-		return (1);
-	if (ft_strncmp(s1, s2, n) == 0)
-		return (1);
-	else
+	int *mem;
+
+	(void)c;
+	mem = (int *)malloc(sizeof(int *));
+	if (mem == 0)
 		return (0);
+	return (mem);
+}
+
+int main (void)
+{
+	printf("%p", ft_rndm(23));
 }

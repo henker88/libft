@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/29 16:10:41 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/03 20:45:30 by sgendry          ###   ########.fr       */
+/*   Created: 2018/12/03 18:50:34 by sgendry           #+#    #+#             */
+/*   Updated: 2018/12/03 20:25:16 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	if (!s1 || !s2)
-		return (-1);
-	if (n == 0)
-		return (1);
-	if (ft_strncmp(s1, s2, n) == 0)
-		return (1);
-	else
-		return (0);
+	t_list	*new;
+	t_list	*mem;
+
+	new = f(lst);
+	mem = new;
+	if (!lst || !f)
+		return (NULL);
+	lst = lst->next;
+	while (lst)
+	{
+		if (!(new->next = f(lst)))
+		{
+			while (mem->next)
+			{
+				new = mem->next;
+				free(mem);
+				mem = new;
+			}
+		}
+		lst = lst->next;
+		new = new->next;
+	}
+	return (mem);
 }
