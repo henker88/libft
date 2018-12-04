@@ -6,7 +6,7 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 14:31:20 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/03 20:38:30 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/12/04 21:28:11 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,14 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+unsigned long		ft_rand(int c);
+int					ft_isblank(int c);
+int					ft_iscntrl(int c);
+int					ft_isgraph(int c);
+int					ft_islower(int c);
+int					ft_isupper(int c);
+int					ft_isspace(int c);
+int					ft_isxdigit(int c);
+void				ft_bubble(char **c);
 
 #endif

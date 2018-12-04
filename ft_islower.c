@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 18:26:42 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/04 21:20:57 by sgendry          ###   ########.fr       */
+/*   Created: 2018/12/04 20:42:53 by sgendry           #+#    #+#             */
+/*   Updated: 2018/12/04 21:23:24 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+int		ft_islower(int ch)
 {
-	if (!lst || !f)
-		return ;
-	while (lst != NULL)
-	{
-		f(lst);
-		lst = lst->next;
-	}
+	if (ch >= 'a' && ch <= 'z')
+		return (1);
+	else
+		return (0);
 }

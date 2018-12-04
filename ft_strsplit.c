@@ -6,7 +6,7 @@
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 14:21:39 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/03 20:37:59 by sgendry          ###   ########.fr       */
+/*   Updated: 2018/12/04 19:29:25 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,10 @@ static char		**ft_my(char **mem, const char *s, char c, size_t word)
 		if (!(mem[i] = ft_strsub(s, 0, len)))
 		{
 			while (i)
+			{
 				free(mem[i]);
+				i--;
+			}
 			return (NULL);
 		}
 		i++;

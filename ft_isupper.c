@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 18:26:42 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/04 21:20:57 by sgendry          ###   ########.fr       */
+/*   Created: 2018/12/04 20:43:48 by sgendry           #+#    #+#             */
+/*   Updated: 2018/12/04 21:23:45 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+int		ft_isupper(int ch)
 {
-	if (!lst || !f)
-		return ;
-	while (lst != NULL)
-	{
-		f(lst);
-		lst = lst->next;
-	}
+	if (ch >= 'A' && ch <= 'Z')
+		return (1);
+	else
+		return (0);
 }

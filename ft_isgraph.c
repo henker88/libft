@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 18:26:42 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/04 21:20:57 by sgendry          ###   ########.fr       */
+/*   Created: 2018/12/04 20:39:55 by sgendry           #+#    #+#             */
+/*   Updated: 2018/12/04 20:57:04 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+int		ft_isgraph(int ch)
 {
-	if (!lst || !f)
-		return ;
-	while (lst != NULL)
-	{
-		f(lst);
-		lst = lst->next;
-	}
+	if (ch >= 0x21 && ch <= 0x7E)
+		return (1);
+	else
+		return (0);
 }

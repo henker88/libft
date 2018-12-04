@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgendry <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/03 18:26:42 by sgendry           #+#    #+#             */
-/*   Updated: 2018/12/04 21:20:57 by sgendry          ###   ########.fr       */
+/*   Created: 2018/12/04 20:28:31 by sgendry           #+#    #+#             */
+/*   Updated: 2018/12/04 20:33:09 by sgendry          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+int		ft_isblank(int ch)
 {
-	if (!lst || !f)
-		return ;
-	while (lst != NULL)
-	{
-		f(lst);
-		lst = lst->next;
-	}
+	return (ch == ' ' || ch == '\t');
 }
